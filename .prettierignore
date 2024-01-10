@@ -1,6 +1,6 @@
-dist/
+public/
 node_modules/
+dist/
 .husky/
 .vscode/
-**/*.d.ts
-LICENSE
+dist/

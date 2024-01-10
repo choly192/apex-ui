@@ -1,0 +1,6 @@
+packages:
+  - "packages/**"
+  # 测试文件夹
+  - "demo"
+  # 排除 test 目录
+  - "!**/test/**"

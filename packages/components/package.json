@@ -2,23 +2,56 @@
   "name": "@apex-ui/components",
   "version": "1.0.0",
   "description": "",
-  "files": ["dist"],
-  "main": "dist/index.mjs",
-  "module": "dist/index.mjs",
-  "typings": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
-  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.mjs",
+  "typings": "dist/types/index.d.ts",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build --mode production",
-    "build:type": "tsc --emitDeclarationOnly",
-    "typecheck": "tsc --noEmit"
+    "build": "tsup --dts",
+    "dev": "pnpm build:fast --watch",
+    "typecheck": "tsc --noEmit",
+    "build:fast": "tsup"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "types": "dist/types/index.d.ts",
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "import": {
+        "types": "./dist/types/index.d.mts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    },
+    "./button": {
+      "source": "./src/button/index.ts",
+      "import": {
+        "types": "./dist/types/button/index.d.mts",
+        "default": "./dist/esm/button/index.mjs"
+      },
+      "require": {
+        "types": "./dist/types/button/index.d.ts",
+        "default": "./dist/cjs/button/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  }
 }

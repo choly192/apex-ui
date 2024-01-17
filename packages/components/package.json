@@ -18,8 +18,8 @@
     "build:fast": "tsup"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "bamboo",
+  "license": "MIT",
   "types": "dist/types/index.d.ts",
   "devDependencies": {
     "react": "^18.2.0",

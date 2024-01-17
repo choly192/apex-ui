@@ -22,8 +22,8 @@
     "commit": "git-cz"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "bamboo",
+  "license": "MIT",
   "engines": {
     "node": ">=14",
     "pnpm": ">=7"
